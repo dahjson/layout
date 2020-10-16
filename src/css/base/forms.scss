@@ -1,0 +1,367 @@
+input[type='text'],
+input[type='password'],
+input[type='url'],
+input[type='email'],
+input[type='tel'],
+input[type='search'],
+input[type='number'],
+input[type='week'],
+input[type='month'],
+input[type='date'],
+input[type='time'],
+input[type='datetime'],
+input[type='datetime-local'],
+textarea,
+select {
+  display: block;
+  padding: rem($spacing);
+  width: 100%;
+  height: 3em;
+  border: 1px solid $color-light;
+  border-radius: 2px;
+  background: white;
+  box-shadow: 0;
+  font-weight: $font-weight;
+  font-size: rem($font-size);
+  font-family: inherit;
+  appearance: none;
+  &::placeholder {
+    color: $color-light;
+  }
+  &:focus {
+    outline: 0;
+    border: 1px solid $color-primary;
+  }
+  &:disabled,
+  &[readonly] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+select {
+  padding: rem($spacing) rem($spacing * 2.5) rem($spacing) rem($spacing);
+  background-color: white;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 31"%3E%3Cpath d="M10.476,30.734l-10,-10l20,0l-10,10Z" fill="gray"/%3E%3Cpath d="M10.476,0.734l10,10l-20,0l10,-10Z" fill="gray"/%3E%3C/svg%3E');
+  background-position: center right rem($spacing);
+  background-size: auto 30%;
+  background-repeat: no-repeat;
+  appearance: none;
+  &[multiple] {
+    padding: 0;
+    min-height: 10em;
+    background: white;
+  }
+  optgroup {
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+    font-style: normal;
+  }
+  option {
+    margin: 0;
+    padding: 0 rem($spacing);
+    font-weight: $font-weight;
+    &::before {
+      content: '';
+    }
+  }
+}
+
+textarea {
+  min-height: 10em;
+  resize: vertical;
+}
+
+label,
+legend {
+  display: block;
+  margin-bottom: rem($spacing);
+  font-weight: bold;
+}
+
+fieldset {
+  padding: 0;
+  border: 0;
+  label {
+    font-weight: normal;
+  }
+}
+
+// unstyled checkbox / radio
+input[type='checkbox'],
+input[type='radio'] {
+  display: inline;
+  &:disabled,
+  &[readonly] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// styled checkbox
+.checkbox {
+  position: relative;
+  margin-left: 1.5em;
+  user-select: none;
+  input {
+    position: absolute;
+    visibility: hidden;
+    transform: translate(-50%, -50%);
+    + span::before {
+      position: absolute;
+      top: 0.8em;
+      left: -1em;
+      display: block;
+      width: 1em;
+      height: 1em;
+      border: 1px solid $color-light;
+      border-radius: $border-radius;
+      background: white;
+      content: '';
+      transform: translate(-50%, -50%);
+    }
+    &:focus + span::before {
+      border: 1px solid $color-primary;
+    }
+    &:checked {
+      + span::before {
+        border: 1px solid $color-primary;
+        background: $color-primary;
+      }
+      + span::after {
+        position: absolute;
+        top: 0.8em;
+        left: -1em;
+        display: block;
+        width: 0.3em;
+        height: 0.6em;
+        border-right: 3px solid white;
+        border-bottom: 3px solid white;
+        content: '';
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    }
+    &:disabled + span::before,
+    &[readonly] + span::before {
+      cursor: not-allowed;
+    }
+    &:disabled + span,
+    &[readonly] + span {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// styled radio
+.radio {
+  position: relative;
+  margin-left: 1.5em;
+  user-select: none;
+  input {
+    position: absolute;
+    visibility: hidden;
+    transform: translate(-50%, -50%);
+    + span::before {
+      position: absolute;
+      top: 0.8em;
+      left: -1em;
+      display: block;
+      width: 1em;
+      height: 1em;
+      border: 1px solid $color-light;
+      border-radius: 50%;
+      background: white;
+      content: '';
+      transform: translate(-50%, -50%);
+    }
+    &:focus + span::before {
+      border: 1px solid $color-primary;
+    }
+    &:checked + span::before {
+      border: 0.3em solid $color-primary;
+    }
+    &:disabled + span::before,
+    &[readonly] + span::before {
+      cursor: not-allowed;
+    }
+    &:disabled + span,
+    &[readonly] + span {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// buttons
+.btn,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  margin: 0 rem($spacing * 0.5) rem($spacing);
+  padding: rem($spacing) rem($spacing * 2);
+  border: 0;
+  border-radius: $border-radius;
+  background: $color-primary;
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: $font-weight;
+  font-size: rem($font-size);
+  font-family: inherit;
+  line-height: $line-height;
+  cursor: pointer;
+  transition: color 0.3s ease-out, background 0.3s ease-out, border 0.3s ease-out;
+  user-select: none;
+  &:hover,
+  &:focus {
+    background: lighten($color-primary, 5%);
+    color: white;
+  }
+  &.btn-small {
+    margin: 0 rem($spacing * 0.25) rem($spacing);
+    padding: rem($spacing * 0.5) rem($spacing);
+    font-size: rem($font-size - 2);
+  }
+  &.btn-large {
+    margin: 0 rem($spacing * 0.75) rem($spacing);
+    padding: rem($spacing * 1.25) rem($spacing * 2.5);
+    font-size: rem($font-size + 5);
+  }
+  &.btn-hollow {
+    border: 1px solid $color-primary;
+    background: transparent;
+    color: $color-primary;
+    &:hover {
+      border: 1px solid lighten($color-primary, 10%);
+      color: lighten($color-primary, 10%);
+    }
+    &.btn-loading::before {
+      border-color: transparent transparent $color-primary $color-primary !important;
+    }
+  }
+  &.btn-light {
+    background: lighten($color-primary, 5%);
+    color: white;
+    &:hover {
+      background: lighten($color-primary, 10%);
+    }
+  }
+  &.btn-dark {
+    background: darken($color-primary, 5%);
+    color: white;
+    &:hover {
+      background: $color-primary;
+    }
+  }
+  &.btn-gray {
+    background: $color-lightest;
+    color: black;
+    &.btn-loading::before {
+      border-color: transparent transparent black black !important;
+    }
+  }
+  &.btn-expanded {
+    display: block;
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+  }
+  &.btn-pill {
+    border-radius: 999999999px;
+  }
+  &.btn-loading {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+    user-select: none;
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 1.3em;
+      height: 1.3em;
+      border-top: 2px solid transparent;
+      border-right: 2px solid transparent;
+      border-bottom: 2px solid white;
+      border-left: 2px solid white;
+      border-radius: 50%;
+      content: '';
+      transform: translate(-50%, -50%);
+      animation: loading 0.5s linear infinite;
+    }
+  }
+  &.btn-disabled,
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    user-select: none;
+  }
+}
+
+@keyframes loading {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+// alert messages
+%alert {
+  margin: rem(20px) 0;
+  padding: rem(10px) rem(20px);
+  border-width: 1px;
+  border-radius: $border-radius;
+}
+
+.alert-info {
+  @extend %alert;
+  border: 1px solid lighten($color-light, 20%);
+  background: lighten($color-light, 30%);
+  color: darken($color-light, 10%);
+}
+
+.alert-success {
+  @extend %alert;
+  border: 1px solid lighten($color-green, 20%);
+  background: lighten($color-green, 30%);
+  color: darken($color-green, 10%);
+}
+
+.alert-warning {
+  @extend %alert;
+  border: 1px solid lighten($color-yellow, 20%);
+  background: lighten($color-yellow, 30%);
+  color: darken($color-yellow, 10%);
+}
+
+.alert-error {
+  @extend %alert;
+  border: 1px solid lighten($color-red, 20%);
+  background: lighten($color-red, 30%);
+  color: darken($color-red, 10%);
+}
+
+// error
+.error {
+  input, textarea, select {
+    border-color: $color-red;
+    &:focus {
+      border-color: $color-red;
+    }
+  }
+}
+
+// help
+.help {
+  margin: rem(10px);
+  color: $color-light;
+  font-size: rem($font-size - 3px);
+}
+
+.help-error {
+  color: $color-red;
+}

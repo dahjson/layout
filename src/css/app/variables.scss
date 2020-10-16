@@ -1,0 +1,49 @@
+// breakpoints
+$sm: '(min-width: 550px)'; // small breakpoint
+$md: '(min-width: 750px)'; // medium breakpoint
+$lg: '(min-width: 950px)'; // large breakpoint
+$xl: '(min-width: 1150px)'; // extra large breakpoint
+
+// type
+$font-weight: 300;
+$font-family: 'Open Sans', 'sans-serif';
+$font-size: 20px;
+$line-height: 1.6;
+
+// grid
+$max-width: 1200px;
+$spacing: 16px;
+
+// border radius
+$border-radius: 3px;
+
+// flat colors
+$color-red: #E74C3C;
+$color-orange: #E67E22;
+$color-yellow: #F1C40F;
+$color-green: #2ECC71;
+$color-teal: #1ABC9C;
+$color-blue: #2980B9;
+$color-purple: #8E44AD;
+$color-pink: #C95196;
+
+// neutral colors
+$color-off-white: #F7F7F7;
+$color-lightest: #E5E5E5;
+$color-lighter: #CCCCCC;
+$color-light: #B3B3B3;
+$color-mid-light: #999999;
+$color-mid-tone: #808080;
+$color-mid-dark: #666666;
+$color-dark: #4D4D4D;
+$color-darker: #333333;
+$color-darkest: #1A1A1A;
+$color-off-black: #080808;
+
+// theme colors
+$color-primary: #5381FF;
+$color-secondary: #5FE1ED;
+$color-tertiary: #C021FF;
+$color-font: black;
+$color-foreground: white;
+$color-background: #1F1F2E;

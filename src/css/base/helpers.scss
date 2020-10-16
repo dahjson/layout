@@ -1,0 +1,33 @@
+// px to rem, font-size: rem(10px);
+@function rem($pixels, $base: $font-size) {
+  @return $pixels / $base * 1rem;
+}
+
+// px to em, font-size: em(10px);
+@function em($pixels, $base: $font-size) {
+  @return $pixels / $base * 1em;
+}
+
+// clearfix
+.clearfix::after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+// no scrolling
+.no-scroll {
+  overflow: hidden;
+}
+
+// screen reader only
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+}

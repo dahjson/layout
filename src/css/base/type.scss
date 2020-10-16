@@ -1,0 +1,154 @@
+// responsive type
+html {
+  background: $color-background;
+  color: $color-font;
+  font-weight: $font-weight;
+  font-size: $font-size - 3px;
+  font-family: $font-family;
+  line-height: $line-height;
+  overflow-wrap: break-word;
+  @media #{$sm} {
+    font-size: $font-size - 2px;
+  }
+  @media #{$md} {
+    font-size: $font-size - 1px;
+  }
+  @media #{$lg} {
+    font-size: $font-size;
+  }
+}
+
+// links
+a {
+  color: $color-primary;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease-out;
+  &:hover {
+    color: lighten($color-primary, 10%);
+  }
+}
+
+// headings
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.6em 0;
+  font-weight: bolder;
+  line-height: 1.1;
+}
+
+h1 { font-size: 1.6em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.3em; }
+h5 { font-size: 1.2em; }
+h6 { font-size: 1.1em; }
+
+// lines
+hr {
+  clear: both;
+  margin: rem($spacing * 3) 0;
+  height: 0;
+  border: 0;
+  border-bottom: 1px solid $color-light;
+}
+
+// paragraphs
+p { margin: rem($spacing) 0; }
+
+strong, b { font-weight: bold; }
+em, i { font-style: italic; }
+
+del, s { text-decoration: line-through; }
+ins, u { text-decoration: underline; }
+
+small, sub, sup { font-size: 75%; }
+sub, sup { line-height: 1.5em; }
+sub { vertical-align: bottom; }
+sup { vertical-align: top; }
+
+abbr, dfn { border-bottom: 1px dashed $color-primary; }
+dfn { font-style: italic; }
+
+mark, ::selection {
+  background: rgba($color-primary, 0.5);
+  color: white;
+}
+
+blockquote, q {
+  margin: 0;
+  margin-left: rem($spacing);
+  padding: 0;
+  padding-left: rem($spacing);
+  border-left: 3px solid $color-primary;
+  font-size: 110%;
+  cite {
+    display: block;
+    font-style: normal;
+    font-size: 90%;
+  }
+}
+
+// code
+code, samp, kbd {
+  margin: 0;
+  padding: rem($spacing * 0.1) rem($spacing * 0.3);
+  border: 1px solid $color-lightest;
+  border-radius: 2px;
+  background: $color-off-white;
+  font-size: 90%;
+  font-family: monospace;
+}
+
+pre {
+  margin: 0 0 rem($spacing);
+  font-family: monospace;
+  > code {
+    display: block;
+    overflow-x: auto;
+    padding: rem($spacing);
+  }
+}
+
+// lists
+ul {
+  margin: 0;
+  margin-bottom: rem($spacing);
+  padding: 0;
+  padding-left: rem($spacing);
+  list-style: disc inside;
+}
+
+ol {
+  margin: 0;
+  margin-bottom: rem($spacing);
+  padding: 0;
+  padding-left: rem($spacing);
+  list-style: decimal inside;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-top: rem($spacing);
+}
+
+li {
+  margin: 0;
+  margin-bottom: rem($spacing);
+  padding: 0;
+}
+
+dl, dt, dd {
+  margin: 0;
+  padding: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: rem($spacing);
+  margin-left: rem($spacing);
+}

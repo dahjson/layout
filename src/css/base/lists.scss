@@ -1,0 +1,42 @@
+ul {
+  margin: 0;
+  margin-bottom: rem($spacing);
+  padding: 0;
+  padding-left: rem($spacing);
+  list-style: disc inside;
+}
+
+ol {
+  margin: 0;
+  margin-bottom: rem($spacing);
+  padding: 0;
+  padding-left: rem($spacing);
+  list-style: decimal inside;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-top: rem($spacing);
+}
+
+li {
+  margin: 0;
+  margin-bottom: rem($spacing);
+  padding: 0;
+}
+
+dl, dt, dd {
+  margin: 0;
+  padding: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: rem($spacing);
+  margin-left: rem($spacing);
+}
